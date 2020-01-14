@@ -1,0 +1,26 @@
+---
+title: "MyMap_leaflet"
+author: "Gaudio Andrea"
+date: "January 14th 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## My_Map
+Here is presented a map constructed with leaflet, which highlights my trips of 2018.
+
+
+
+```{r, message=F}
+library(leaflet)
+latit = c(39.0000, 43.3615, 45.2838)
+long = c(-9.759, 1.2637, 09.1053)
+cities = c("Lisbon", "Toulouse", "Milan")
+df = data.frame(lat = latit, lng = long, cit = cities)
+df %>% leaflet() %>% addTiles() %>% addMarkers(popup = cities)
+```
+
+
