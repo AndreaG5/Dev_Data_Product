@@ -1,0 +1,50 @@
+---
+title: "Project_week3"
+author: "Gaudio Andrea"
+date: "January 15th 2020"
+output:
+  ioslides_presentation: default
+  smaller: true 
+  
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Project Assignment week 3
+
+*Create a web page presentation using R Markdown that features a plot created with Plotly.* 
+
+### Dataset
+
+**Iris**
+
+## Variables Considered
+
+I decided to use Iris dataset, because of its availability on R. I plotted three variables in a 3D scatterplot, colored by Species.
+
+
+- *Sepal.Length*
+- *Petal.Length*
+- *Petal.Width*
+
+## R Code
+
+```{r, message=F, echo = T, comment= ""}
+library(plotly)
+data("iris")
+head(iris)
+```
+
+## Plot
+#### Variables Plotted
+
+- **x** = Sepal.Length
+- **y** = Petal.Length
+- **z** = Petal.Width
+
+```{r, message=F }
+plot_ly(x = iris$Sepal.Length, y = iris$Petal.Length, z = iris$Petal.Width, type = "scatter3d", color = iris$Species)
+```
+
